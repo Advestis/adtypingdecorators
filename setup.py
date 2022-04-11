@@ -7,10 +7,10 @@ from setuptools import find_packages, setup
 
 workdir = Path(__file__).parent
 
-name = Path(__file__).absolute().parent.stem
-author = "Philippe COTTE"
-author_email = "pcotte@advestis.com"
-description = "APython decorators allowing to check and/or enforce types in functions' arguments based on typing hints "
+name = "adtypingdecorators"
+author = "Advestis"
+author_email = "pythondev@advestis.com"
+description = "A Python decorators allowing to check and/or enforce types in functions' arguments based on typing hints "
 url = f"https://github.com/Advestis/{name}"
 
 
