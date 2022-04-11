@@ -4,4 +4,5 @@ prune ./.git
 prune ./.github
 prune ./.idea
 prune ./build
-prune ./dist
+prune ./distinclude versioneer.py
+include adtypingdecorators/_version.py

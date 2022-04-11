@@ -60,3 +60,6 @@ np.array([2, 3]), np.array([3, 7]), 4, pd.DataFrame([5])
 
 from .decorators import typing_raise, typing_custom, typing_convert, typing_warn
 from .checker import IterableNotStr
+
+from . import _version
+__version__ = _version.get_versions()['version']
