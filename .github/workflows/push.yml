@@ -43,7 +43,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           # versioneer gets the latest version from number of commits since tag
-          python setup.py version
+          pip install .
           # use this version to make a NEW tag
           version=$(python -c '
           import adtypingdecorators
