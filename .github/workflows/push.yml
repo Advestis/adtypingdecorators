@@ -70,11 +70,11 @@ jobs:
           branch: "gh-pages"
           force: true
 
-#      - name: topypi
-#        if: ${{ env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'main' }}
-#        uses: pypa/gh-action-pypi-publish@master
-#        with:
-#          user: ${{ secrets.ORG_PYPI_LOGIN }}
-#          password: ${{ secrets.ORG_PYPI_PASSWD }}
-#          skip_existing: true
-#          verbose: true
+      - name: topypi
+        if: ${{ env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'main' }}
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: ${{ secrets.ORG_PYPI_LOGIN }}
+          password: ${{ secrets.ORG_PYPI_PASSWD }}
+          skip_existing: true
+          verbose: true
