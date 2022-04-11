@@ -52,14 +52,12 @@ def test_convert():
 # noinspection PyTypeChecker
 @pytest.mark.filterwarnings("error")
 def test_warning():
-    assert f_raise(1) == 2
     with pytest.raises(Warning):
         f_warn(1.5)
 
 
 # noinspection PyTypeChecker
 def test_warning_2():
-    assert f_raise(1) == 2
     assert f_warn(1.5) == 2.5
 
 

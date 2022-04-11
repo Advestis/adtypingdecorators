@@ -35,17 +35,58 @@ pip install adtypingdecorators
 ## Usage
 
 ```python
-from adtypingdecorators import typing_raise, typing_convert
+import numpy as np
+import pandas as pd
+from adtypingdecorators import typing_raise, typing_convert, typing_warn, typing_custom
+
+
+def to_array(a: int):
+    return np.array([a, 2 * a])
+
+
+def to_array_2(a: int):
+    return np.array([a, 3 * a])
+
 
 @typing_raise
 def f_raise(a: int):
     return a + 1
 
+
 @typing_convert
 def f_convert(a: int):
     return a + 1
 
-f_raise(1)  # returns 2
-f_raise(1.5)  # returns TypeError
-f_convert(1.5)  # returns 2 (casts 1.5 to integer, so to 1, then adds 1)
+
+@typing_warn
+def f_warn(a: int):
+    return a + 1
+
+
+@typing_custom(
+    convertors={int: to_array, "b": to_array_2},
+    exclude=["c", pd.DataFrame]
+)
+def f_custom(a: np.ndarray, b: np.ndarray, c: np.ndarray, d: np.ndarray):
+    return a + 1, b + 1, c + 1, d + 1
+
+
+f_raise(1)  # Returns 2, as expected
+# noinspection PyTypeChecker
+f_raise(1.5)  # Raises TypeError
+
+# noinspection PyTypeChecker
+f_convert(1.5)  # Returns 2 (converted 1.5 into 1)
+# noinspection PyTypeChecker
+f_convert("foo")  # Raises ValueError (while trying to convert 'foo' to interger)
+
+# noinspection PyTypeChecker
+f_warn(1.5)  # Returns 2.5, and warns
+
+# noinspection PyTypeChecker
+a_, b_, c_, d_ = f_custom(1, 2, 3, pd.DataFrame([4]))
+# a_ is np.array([2, 3])
+# b_ is np.array([3, 7])
+# c_ is 4
+# d_ is pd.DataFrame([5])
 ```
