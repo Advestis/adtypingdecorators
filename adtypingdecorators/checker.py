@@ -129,7 +129,7 @@ class FunctionArgumentsCheck(object):
         return tuple(args), kwargs
 
     def test_and_handle(self, name, value, _type, varsnames, args, kwargs):
-        """Checks that 'value' is of type '_type', and calls 'adtypingdecorators.checker.FunctionArgumentChecker.handle'
+        """Checks that 'value' is of type '_type', and calls 'adtypingdecorators.checker.FunctionArgumentsChecker.handle'
         if not."""
         if not self.test(value, _type):
             self.handle(name, value, _type, varsnames, args, kwargs)
