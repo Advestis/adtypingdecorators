@@ -51,7 +51,7 @@ jobs:
           v = ".".join(v.split(".")[0:2]).replace("+", ".")
           print(v)
           ')
-        git tag $version
+          git tag $version
           python setup.py sdist
 
       - name: make doc
