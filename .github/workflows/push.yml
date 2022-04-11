@@ -52,6 +52,7 @@ jobs:
           print(v)
           ')
           git tag $version
+          echo "Version is $version"
           python setup.py sdist
 
       - name: make doc
