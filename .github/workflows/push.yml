@@ -51,7 +51,7 @@ jobs:
           v = ".".join(v.split(".")[0:2]).replace("+", ".")
           print(v)
           ')
-          git tag $version
+          git tag v$version
           echo "Version is $version"
           python setup.py version
           python setup.py sdist
