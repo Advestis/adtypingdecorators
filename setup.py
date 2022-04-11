@@ -10,7 +10,7 @@ workdir = Path(__file__).parent
 name = Path(__file__).absolute().parent.stem
 author = "Philippe COTTE"
 author_email = "pcotte@advestis.com"
-description = "A package implementing the notion of complex number"
+description = "APython decorators allowing to check and/or enforce types in functions' arguments based on typing hints "
 url = f"https://github.com/Advestis/{name}"
 
 
