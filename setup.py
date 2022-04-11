@@ -19,6 +19,6 @@ if __name__ == "__main__":
 
     version = ".".join(versioneer.get_version().split(".")[0:2]).replace("+", ".")
     setup(
-        version=version,
+        version=versioneer.get_version(),
         cmdclass=cmdclass,
     )
