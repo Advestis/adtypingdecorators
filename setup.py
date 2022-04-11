@@ -10,7 +10,7 @@ workdir = Path(__file__).parent
 name = "adtypingdecorators"
 author = "Advestis"
 author_email = "pythondev@advestis.com"
-description = "A Python decorators allowing to check and/or enforce types in functions' arguments based on typing hints "
+description = "A Python decorators allowing to check and/or enforce types in functions' arguments based on typing hints"
 url = f"https://github.com/Advestis/{name}"
 
 
@@ -90,6 +90,8 @@ if "-" in version:
     version = version.replace("-", "")
 if "\"" in version:
     version = version.replace("\"", "")
+
+print("VERSION:", version)
 
 
 if __name__ == "__main__":
