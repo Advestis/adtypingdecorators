@@ -1,1 +1,7 @@
 graft ./
+global-exclude *.pyc .gitignore
+prune ./.git
+prune ./.github
+prune ./.idea
+prune ./build
+prune ./dist
