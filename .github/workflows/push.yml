@@ -46,10 +46,12 @@ jobs:
           pip install .
           # use this version to make a NEW tag
           version=$(python -c '
-          import adtypingdecorators
-          v = adtypingdecorators.__version__
-          v = ".".join(v.split(".")[0:2]).replace("+", ".")
-          print(v)
+          import versioneer
+          v = versioneer.get_version()
+          ncommits = v.split("+")[1].split(".")[0]
+          tag = v.split("+")[0]
+          version = ".".join([tag, ncommits])
+          print(version)
           ')
           git tag v$version
           echo "Version is $version"
