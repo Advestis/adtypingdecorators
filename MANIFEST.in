@@ -5,4 +5,5 @@ prune ./.github
 prune ./.idea
 prune ./build
 prune ./distinclude versioneer.py
+include versioneer.py
 include adtypingdecorators/_version.py
